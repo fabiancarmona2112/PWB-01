@@ -1,34 +1,65 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="UTF-8">
-            <link rel="Icon" href="favicons/log_in_icon.ico">
-            <title>Registrarse</title>
-        </head>
+<html>
 
-        <body>            
-            <form>
-                <fieldset>
-                    <legend>Ingrese sus datos</legend>
-                    <label>
-                        Ingrese su correo
-                        <input type="email" name="email" required>                         
-                    </label>
-                    <label>
-                        Ingrese su nombre de usuario
-                        <input type="text" name="username" required>
-                    </label>
-                    <label>
-                        Ingrese su contraseña
-                        <input type="password" name="password" required>
-                    </label>                                        
-                </fieldset>
+<head>
+    <meta charset="UTF-8">
+    <link rel="Icon" href="favicons/log_in_icon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Registrarse</title>
+</head>
 
-                <div border="2">
-                    <image src="userIcon/madre.png">Persona como icono de perfil</image>
-                </div>
-            </form>
-        </body>
-    </html>
+<body>
+    <form>
+        <fieldset>
+            <legend>Ingrese sus datos</legend>
+            <div>
+                <label>
+                    Ingrese su correo
+                    <input type="email" name="email" required>
+                </label>
+            </div>
+            <div>
+                <label>
+                    Ingrese su nombre de usuario
+                    <input type="text" name="username" required>
+                </label>
+            </div>
+            <div>
+                <label>
+                    Ingrese su contraseña
+                    <input type="password" name="password" required>
+                </label>
+            </div>
+        </fieldset>
 
-    <--!probar imagenes de 32px-->
+
+
+        <div class="container">
+            <img src="userIcon/persona.png" alt="persona" value="Persona">
+            <img src="userIcon/mama.png" alt="mama">
+            <img src="userIcon/atleta.png" alt="atleta">
+            <img src="userIcon/disenador.png" alt="disenador">
+            <img src="userIcon/entrenador.png" alt="entrenador">
+            <img src="userIcon/joven.png" alt="joven">
+        </div>
+
+        <div class="container">
+            <label><input type="image" src="userIcon/atleta.png" value="Atleta" id="Icons"></label>
+            <label><input type="image" src="userIcon/persona.png" value="Persona" id="Icons"></label>
+            <label><input type="image" src="userIcon/mama.png" value="Mama" id="Icons"></label>
+            <label><input type="image" src="userIcon/disenador.png" value="Disenador" id="Icons"></label>
+            <label><input type="image" src="userIcon/entrenador.png" value="Entrenador" id="Icons"></label>
+            <label><input type="image" src="userIcon/joven.png" value="Joven" id="Icons"></label>
+        </div>
+
+
+
+            <!--<script src="js/script.js"></script>-->
+      
+
+    </form>    
+</body>
+
+</html>
+
+<--!probar imagenes de 32px-->
