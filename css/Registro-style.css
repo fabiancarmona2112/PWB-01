@@ -111,6 +111,22 @@ body{
     -webkit-text-stroke-color: black;
 }
 
+.navbar-list{
+    background-color: green;
+   transform: translate(60%, -70px);
+   padding: 0px;
+   height: 40px;
+   padding: 10px;
+   
+}
+
+.navbar-list li{
+    display: inline-block ;
+    margin: 0px;
+    padding-top: 1px;
+    
+}
+
 .barr-menu a.ancores{
     transform: translate(100%);
 }
