@@ -1,10 +1,1 @@
-var imagen = document.getElementById('Icons').
-addEventListener("click", function(event)
-{
-    console.log("Diste click a la imagen");
-    console.log(imagen);
-    var valor = document.getElementById('Atleta').value;
-    console.log(valor)
-},false);
-
-document.getElementsByName('username').innerHTML= valor;
+//document.write('<div> <img src="userIcon/atleta.png"> <h1> Titulo </h1> </div>');

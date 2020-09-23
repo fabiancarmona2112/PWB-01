@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/Registro-style.css">
-    <link rel="Icon" href="favicons/log_in_icon.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/Registro-style.css" />
+    <link rel="Icon" href="favicons/log_in_icon.ico" />
     <title>| Registrarse</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <nav class="barr-menu">
+      <h1>NavBar</h1>
+      <div>
+          <a href="#" class="ancores">Home</a>
+      </div>
+    </nav>
+
     <div class="login-box">
-        <img class="avatar" src="userIcon/persona.png" alt="Persona">
-        <h1>Registrarse</h1>
-        <form>
-            <label for="Name">Ingrese su Nombre</label>
-            <input type="text" name="Name" placeholder="Nombre"><br>
-            <label for="Last-Name">Ingrese sus Apellidos</label>
-            <input type="text" name="Last-Name" placeholder="Apellidos"><br>
-            <label for="Email">Ingrese su coreo</label>
-            <input type="email" name="Email" placeholder="correo"><br>
-            <label for="Password">Ingrese su Contraseña</label>
-            <input type="password" name="Password" placeholder="Contraseña"><br>
-            <input type="submit" value="Guardar">
-        </form>
-        <a href="#">Iniciar sesion</a>
-        <a href="#">Olvidaste la contraseña?</a>
+      <img class="avatar" src="userIcon/persona.png" alt="Persona" />
+      <h1>Registrarse</h1>
+      <form id="register-box">
+        <label for="Name">Ingrese su Nombre</label>
+        <input type="text" name="Name" placeholder="Nombre" /><br />
+        <label for="Last-Name">Ingrese sus Apellidos</label>
+        <input
+          type="text"
+          name="Last-Name"
+          placeholder="Apellidos"
+          required
+        /><br />
+        <label for="Email">Ingrese su coreo</label>
+        <input type="email" name="Email" placeholder="correo" /><br />
+        <label for="Password">Ingrese su Contraseña</label>
+        <input type="password" name="Password" placeholder="Contraseña" /><br />
+        <input type="submit" value="Guardar" />
+      </form>
+      <a href="#">Iniciar sesion</a>
+      <a href="#">Olvidaste la contraseña?</a>
     </div>
-</body>
 
+    <script src="js/script.js"></script>
+  </body>
 </html>

@@ -1,7 +1,8 @@
 body{
     margin: 0px;
     padding: 0px;
-    background: url(../images/wallpaper.jpg);
+    background-image: linear-gradient(to bottom, #3b0617, #080B0F);
+    background-repeat: no-repeat;
     background-size: cover;
     font-family: sans-serif;
     height: 100vh;
@@ -12,13 +13,12 @@ body{
     height: 430px;
     background: black;
     color: white;
-    top: 15%;
-    left: 35%;
+    top: 25%;
+    left: 40%;
     position: absolute;
     padding-top: 80px;
     padding-left: 10px;
     padding-right: 25px;
-    box-shadow: yellow;
 }
 
 .avatar{
@@ -52,7 +52,7 @@ body{
 .login-box input[type="text"]{
     border-top: none;
     border-right: none;
-    border-left: none;
+    border-left: none;    
     background-color: black;
 }
 
@@ -84,8 +84,39 @@ body{
 }
 
 .login-box a{
-    color: white;
+    text-decoration: none;
+    color: darkgray;
     
 }
+
+.login-box a:hover{
+    color: whitesmoke;
+}
+
+.barr-menu{
+    width: 100%;
+    height: 100px;
+    height: 80px;
+    background-color: darkgray;
+    
+}
+
+.barr-menu h1{
+    padding-left: 80px;
+    margin: 0px;
+    color: whitesmoke;
+    font-family: 'Anton', sans-serif;
+    font-size: 50px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.barr-menu a.ancores{
+    transform: translate(100%);
+}
+
+
+
+
 
 
