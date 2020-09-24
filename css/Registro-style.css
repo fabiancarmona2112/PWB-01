@@ -161,6 +161,7 @@ nav {
     width: 50%;
     transform: translateX(100%);
     background-image: linear-gradient(to bottom, #3b0617, #080b0f);
+    transition: transform 0.5s ease-in;
   }
 
   .login-box{
@@ -174,4 +175,20 @@ nav {
   .burger {
     display: block;
   }
+}
+
+.nav-active{
+    opacity: 0;
+    transform: translateX(50%);    
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
