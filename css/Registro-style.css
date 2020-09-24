@@ -1,138 +1,177 @@
-body{
-    margin: 0px;
-    padding: 0px;
-    background-image: linear-gradient(to bottom, #3b0617, #080B0F);
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: sans-serif;
-    height: 100vh;
+body {
+  margin: 0px;
+  padding: 0px;
+  background-image: linear-gradient(to bottom, #3b0617, #080b0f);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: sans-serif;
+  height: 100vh;
 }
 
-.login-box{
-    width: 320px;
-    height: 430px;
-    background: black;
-    color: white;
-    top: 25%;
-    left: 40%;
+.login-box {
+  width: 320px;
+  height: 430px;
+  background: black;
+  color: white;
+  top: 25%;
+  left: 40%;
+  position: absolute;
+  padding-top: 80px;
+  padding-left: 10px;
+  padding-right: 25px;
+}
+
+.avatar {
+  background: white;
+  border-radius: 70px;
+  top: -60px;
+  left: 115px;
+  position: absolute;
+}
+
+.login-box h1 {
+  margin: 0px;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.login-box label {
+  margin-bottom: 5px;
+  padding: 0px;
+  font-weight: bold;
+  display: block;
+}
+
+.login-box input {
+  width: 100%;
+  margin-bottom: 20px;
+  color: rgb(138, 138, 131);
+}
+
+.login-box input[type="text"] {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: black;
+}
+
+.login-box input[type="email"] {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: black;
+}
+
+.login-box input[type="password"] {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: black;
+}
+
+.login-box input[type="submit"] {
+  width: 70%;
+  height: 40px;
+  border: none;
+  transform: translate(50px);
+  background-color: crimson;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 18px;
+}
+
+.login-box a {
+  text-decoration: none;
+  color: darkgray;
+}
+
+.login-box a:hover {
+  color: whitesmoke;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  font-family: "Anton", sans-serif;
+}
+
+.nav-logo {
+  font-size: 42px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: whitesmoke;
+  -webkit-text-stroke-color: #3b0617;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.nav-list li {
+  list-style: none;
+}
+
+.nav-list a {
+  font-size: 24px;
+  color: whitesmoke;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background-color: whitesmoke;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-list {
+    width: 60%;
+  }
+
+  .login-box{
+      transform: translateX(-70px);
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+
+  .nav-list {
     position: absolute;
-    padding-top: 80px;
-    padding-left: 10px;
-    padding-right: 25px;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    background-image: linear-gradient(to bottom, #3b0617, #080b0f);
+  }
+
+  .login-box{
+      transform: translateX(-105px);
+  }
+
+  .nav-list li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+  }
 }
-
-.avatar{
-    background: white;
-    border-radius: 70px;
-    top: -60px;
-    left: 115px;
-    position: absolute;    
-}
-
-.login-box h1{
-    margin: 0px;
-    padding: 0 0 20px;    
-    text-align: center;
-    font-size: 24px;    
-}
-
-.login-box label{
-   margin-bottom: 5px;
-   padding: 0px;
-   font-weight: bold;
-   display: block;
-}
-
-.login-box input{
-    width: 100%;
-    margin-bottom: 20px;   
-    color: rgb(138, 138, 131); 
-}
-
-.login-box input[type="text"]{
-    border-top: none;
-    border-right: none;
-    border-left: none;    
-    background-color: black;
-}
-
-.login-box input[type="email"]{
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    background-color: black
-}
-
-.login-box input[type="password"]{
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    background-color: black
-}
-
-.login-box input[type="submit"]{
-    width: 70%;
-    height: 40px;
-    border: none;
-    transform: translate(50px);    
-    background-color: crimson;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: white;
-    font-size: 18px;
-
-}
-
-.login-box a{
-    text-decoration: none;
-    color: darkgray;
-    
-}
-
-.login-box a:hover{
-    color: whitesmoke;
-}
-
-.barr-menu{
-    width: 100%;
-    height: 100px;
-    height: 80px;
-    background-color: darkgray;
-    
-}
-
-.barr-menu h1{
-    padding-left: 80px;
-    margin: 0px;
-    color: whitesmoke;
-    font-family: 'Anton', sans-serif;
-    font-size: 50px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-}
-
-.navbar-list{
-    background-color: green;
-   transform: translate(60%, -70px);
-   padding: 0px;
-   height: 40px;
-   padding: 10px;
-   
-}
-
-.navbar-list li{
-    display: inline-block ;
-    margin: 0px;
-    padding-top: 1px;
-    
-}
-
-.barr-menu a.ancores{
-    transform: translate(100%);
-}
-
-
-
-
-
-
