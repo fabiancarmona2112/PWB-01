@@ -54,6 +54,7 @@ body {
   border-right: none;
   border-left: none;
   background-color: black;
+  outline: none;
 }
 
 .login-box input[type="email"] {
@@ -61,6 +62,7 @@ body {
   border-right: none;
   border-left: none;
   background-color: black;
+  outline: none;
 }
 
 .login-box input[type="password"] {
@@ -68,6 +70,7 @@ body {
   border-right: none;
   border-left: none;
   background-color: black;
+  outline: none;
 }
 
 .login-box input[type="submit"] {
@@ -80,6 +83,7 @@ body {
   margin-bottom: 20px;
   color: white;
   font-size: 18px;
+  border-radius: 5px;
 }
 
 .login-box a {
@@ -117,6 +121,10 @@ nav {
   list-style: none;
 }
 
+.nav-list li:hover(){
+  text-decoration: aliceblue;
+}
+
 .nav-list a {
   font-size: 24px;
   color: whitesmoke;
@@ -139,37 +147,39 @@ nav {
   .nav-list {
     width: 60%;
   }
-
+  
   .login-box{
-      transform: translateX(-70px);
+    transform: translateX(-70px);
   }
-
+  
 }
 
 @media screen and (max-width: 768px) {
   body {
-    overflow: hidden;
+    overflow-x: hidden;
   }
-
+  
   .nav-list {
     position: absolute;
     right: 0px;
-    height: 92vh;
-    top: 8vh;
+    height: 20vh;
+    top: 15vh;
+    
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
     transform: translateX(100%);
-    background-image: linear-gradient(to bottom, #3b0617, #080b0f);
     transition: transform 0.5s ease-in;
   }
-
+  
   .login-box{
-      transform: translateX(-105px);
+    transform: translateX(-105px);
+    transition: transform 0.5s ease-out;
   }
 
   .nav-list li {
-    opacity: 0;
+    opacity: 1;
   }
 
   .burger {
@@ -178,11 +188,14 @@ nav {
 }
 
 .nav-active{
-    opacity: 0;
-    transform: translateX(50%);    
+    transform: translateX(0%);    
 }
 
-@keyframes navLinkFade{
+.login-box-active{
+  transform: translate(-180px);
+}
+
+@keyframes navListFade{
     from{
         opacity: 0;
         transform: translateX(50px);
@@ -191,4 +204,24 @@ nav {
         opacity: 1;
         transform: translateX(0px);
     }
+}
+
+@keyframes loginBoxFade{
+  from{
+    transform: translateX(-105px);
+  }to{
+    transform: translate(-180px);    
+  }
+}
+
+.cross .line-1{
+  transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.cross .line-2{
+  opacity: 0;
+}
+
+.cross .line-3{
+  transform: rotate(45deg) translate(-5px,-6px);
 }
