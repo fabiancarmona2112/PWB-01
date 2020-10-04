@@ -3,6 +3,7 @@ const navSlided = () => {
   const nav = document.querySelector(".nav-list");
   const navList = document.querySelectorAll(".nav-list li");
   var loginBox = document.querySelector(".login-box");
+  let carruselBox = document.querySelector(".carrusel-box");
 
   burger.addEventListener("click", () => {
     nav.classList.toggle("nav-active");
@@ -13,6 +14,7 @@ const navSlided = () => {
       if(link.style.animation){
         link.style.animation = `navListFade  0.5s ease fordward ${index / 7 + 1}s`;
         loginBox.style.animation = `loginBoxFade 0.5s ease fordward 2s`;
+        carruselBox.style.left = `5%`;
       }else{
         link.style.animation = ``;
         loginBox.style.animation = ``;

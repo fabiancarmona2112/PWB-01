@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   padding: 0px;
+  background-color: #080b0f;
   background-image: linear-gradient(to bottom, #3b0617, #080b0f);
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,6 +20,54 @@ body {
   padding-top: 80px;
   padding-left: 10px;
   padding-right: 25px;
+}
+
+.carrusel-box{
+  margin: 0px;
+  padding: 0px;
+  height: 45%;
+  width: 75%;
+  position: relative;
+  top: 23px;
+  left: 10%;
+  display: flex;
+  background-color: #ffff;
+}
+
+.carrusel-images{
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.carrusel-selector{
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  display: inline-block;
+}
+
+.new-articles{
+  margin: 0px;
+  padding: 0px;
+  width: 75%;
+  height: 25%;
+  position: relative;
+  left: 10%;
+  background-color: black;
+  display: flex;
+}
+
+.new-articles div{
+  margin: 0px;
+  padding: 10px;
+  height: 100%;
+  width: 50%;
+}
+
+.new-articles img{
+  width: 100%;
+  height: 100%;
 }
 
 .avatar {
@@ -198,11 +247,11 @@ nav {
 @keyframes navListFade{
     from{
         opacity: 0;
-        transform: translateX(50px);
+        transform: translateX(50px);        
     }
     to{
         opacity: 1;
-        transform: translateX(0px);
+        transform: translateX(50px);
     }
 }
 
