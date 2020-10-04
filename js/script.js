@@ -13,8 +13,7 @@ const navSlided = () => {
     navList.forEach((link, index) => {
       if(link.style.animation){
         link.style.animation = `navListFade  0.5s ease fordward ${index / 7 + 1}s`;
-        loginBox.style.animation = `loginBoxFade 0.5s ease fordward 2s`;
-        carruselBox.style.left = `5%`;
+        loginBox.style.animation = `loginBoxFade 0.5s ease fordward 2s`;        
       }else{
         link.style.animation = ``;
         loginBox.style.animation = ``;
