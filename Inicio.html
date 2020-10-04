@@ -22,5 +22,22 @@
         <div class="line-3"></div>
       </div>
     </nav>
-  </body>
+
+    <div style="background-color: white; margin: 0px; padding: 0px; height: 60%; width: 75%; position: relative; top: 25px; left: 10%; display: flex;">
+        <input type="button" id="preview" value="<" style="border: none; background-color: transparent; font-size: 34px">
+        <div id="image" style="background-size: cover; width: 100%; height: 100%;">
+        </div>
+        <input type="button" id="next" value=">" style="border: none; background-color: transparent; font-size: 34px">   
+        <div style="position: absolute; top: 85%; left: 50%; display: inline-block;">
+          <input type="radio" name="picPos" value="posOne" id="posOne">
+          <input type="radio" name="picPos" value="posTwo" id="posTwo">
+          <input type="radio" name="picPos" value="posThre" id="posThre">
+        </div>          
+      
+    </div>
+
+    <script src="js/carrusel.js"></script>
+    <script src="js/script.js"></script>
+
+  </body>  
 </html>
