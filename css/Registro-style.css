@@ -152,6 +152,8 @@ nav {
   align-items: center;
   min-height: 8vh;
   font-family: "Anton", sans-serif;
+  background-color: #0f0307;
+  box-shadow: 10px 5px 5px white;
 }
 
 .nav-logo {
