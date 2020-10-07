@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/Registro-style.css" />
+	<link rel="stylesheet" href="css/Registro-style.css" />
+	<link rel="stylesheet" href="css/categorias.css">
     <title>Categories</title>
   </head>
   <body>
@@ -22,146 +23,74 @@
         <div class="line-3"></div>
       </div>
     </nav>
-    <div style="position:relative; left: 18%; top: 50px; width: 60%; height: 180px;">
-      <header
-        style="
-          height: 50px;
-          width: 100%;
-          font-family: sans-serif;
-          font-size: 24;
-          text-align: center;
-          margin: 0px;
-          padding: 0px;
-        "
-      >
-        <h2
-          style="
-            padding: 0px;
-            margin: 0px;
-            padding-top: 10px;
-            font-family: sans-serif;
-            font-size: 32px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: whitesmoke;
-          "
-        >
+    <div class="content">
+      <header class="categories-title">
+        <h2>
           Noticias
         </h2>
       </header>
-      <div
-        style="
-          display: flex;
-          background-color: black;
-          height: 100%;
-          width: 100%;
-        "
-      >
-        <div
-          style="
-            background-color: purple;
-            margin: 5px;
-            height: 100%;
-            width: 100%;
-          "
-        >
-          <header style="text-align: center; margin: 5px; padding: 0px">
-            <h3
-              style="
-                margin: 0px;
-                padding: 0px;
-                font-family: sans-serif;
-                font-size: 24;
-                letter-spacing: 2px;
-				color: white;
-              "
-            >
+      <div class="categories-box">
+        <div>
+          <header>
+            <h3>
               Recientes
             </h3>
           </header>
         </div>
-        <div
-          style="
-            background-color: orange;
-            margin: 5px;
-            height: 100%;
-            width: 100%;
-          "
-        >
-          <header style="text-align: center; margin: 5px; padding: 0px">
-            <h3
-              style="
-                margin: 0px;
-                padding: 0px;
-                font-family: sans-serif;
-                font-size: 24;
-                letter-spacing: 2px;
-                color: white;
-              "
-            >
+        <div>
+          <header>
+            <h3>
               Más vistas
             </h3>
           </header>
         </div>
-        <div
-          style="
-            background-color: greenyellow;
-            margin: 5px;
-            height: 100%;
-            width: 100%;
-          "
-        >
-          <header style="text-align: center; margin: 5px; padding: 0px">
-            <h3
-              style="
-                margin: 0px;
-                padding: 0px;
-                font-family: sans-serif;
-                font-size: 24px;
-                letter-spacing: 2px;
-                color: white;
-              "
-            >
-              Mas vistas
+        <div>
+          <header>
+            <h3>
+              Escritores
             </h3>
           </header>
         </div>
-      </div>
+	  </div>
+	  <header class="categories-title">
+        <h2>
+          Tienda
+        </h2>
+      </header>
+      <div class="categories-box">
+        <div>
+          <header>
+            <h3>
+              Hardware
+            </h3>
+          </header>
+        </div>
+        <div>
+          <header>
+            <h3>
+              Perifericos 
+            </h3>
+          </header>
+        </div>
+        <div>
+          <header>
+            <h3>
+              Ofertas
+            </h3>
+          </header>
+        </div>
+	  </div>
       <div>
-        <header
-          style="
-            color: white;
-            margin: 20px;
-            margin-top: 49px;
-            text-align: left;
-            padding-left: 40px;
-          "
-        >
-          <h4
-            style="
-              margin: 0px;
-              padding: 0px;
-              font-family: sans-serif;
-              font-size: 24px;
-            "
-          >
+        <header class="news-header">
+          <h4>
             Noticias
           </h4>
-          <div
-            style="background-color: whitesmoke; height: 2px; width: 100%"
-          ></div>
-          <form action="" style="margin-left: 820px">
+          <div class="news-line"></div>
+          <form action="" >
             <label for="select-order">Order By: </label>
             <select
               name="Select-order"
               id="Select-order"
-              style="
-                margin-left: 10px;
-                box-sizing: border-box;
-                width: 100px;
-                border: none;
-                border-color: #222;
-              "
             >
               <option value="none"></option>
               <option value="Most viewed">Mas visto</option>
@@ -170,42 +99,22 @@
           </form>
         </header>
       </div>
-      <div style="border-radius: 35px">
+      <div>
         <article id="articles">
           <ul>
-            <a href="Inicio.html" style="text-decoration: none">
-              <li tabindex="0" id="0" style="list-style: none">
-                <header style="display: flex">
+            <a href="Inicio.html" class="article">
+              <li tabindex="0" id="0">
+                <header>
                   <img
                     src="images/News/390RTX.jpg"
                     height="150"
                     width="150"
-                    style="border-radius: 70px"
                   />
-                  <div style="margin-left: 15px">
-                    <h5
-                      style="
-                        margin: 0px;
-                        margin-top: 20px;
-                        padding: 0px;
-                        font-family: sans-serif;
-                        font-size: 40px;
-                        color: whitesmoke;
-                        text-transform: uppercase;
-                      "
-                    >
+                  <div>
+                    <h5 >
                       La conferencia de amd el 8 de octubre.
                     </h5>
-                    <p
-                      style="
-                        margin: 0px;
-                        padding: 0px;
-                        margin-top: 10px;
-                        margin-left: 20px;
-                        color: whitesmoke;
-                        font-size: 18px;
-                      "
-                    >
+                    <p>
                       Se celebrar econferencia virtual a través de twitch.
                     </p>
                   </div>
@@ -215,7 +124,8 @@
           </ul>
         </article>
       </div>
-    </div>
+	</div>
+	<script src="js/script.js"></script>
 </body>
 
 </html>
