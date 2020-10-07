@@ -1,0 +1,28 @@
+div{
+    position: relative;
+    left: 18%;
+    top: 50px;
+    width: 60%;
+    height: 180px;
+}
+
+.categories-title{
+    height: 50px;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 24;
+    text-align: center;
+    margin: 0px;
+    padding: 0px
+}
+
+.categories-title h2{
+    padding: 0px;
+    margin: 0px;
+    padding-top: 10px;
+    font-family: sans-serif;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: whitesmoke;
+}
