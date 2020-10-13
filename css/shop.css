@@ -44,3 +44,9 @@ input[type="button"]{
 .categorie{
 	border-bottom-width: 8px;
 }
+
+.store-categories .btn-group-vertical .btn-group{
+	color: rebeccapurple;
+
+
+}
