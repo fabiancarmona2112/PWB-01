@@ -1,3 +1,6 @@
+body{
+  overflow-x: hidden;
+}
 .card-article-container {
   margin-top: 100px;
   background-color: pink;
@@ -123,6 +126,21 @@
     padding: 40px;
 }
 
-.row{
-    background-color: grey;
+.my-container{
+  transform: translateX(-2%);
+  background-color: grey;
+  padding: 20px;
+}
+
+.my-card img{
+  margin: 50px;  
+
+}
+
+.my-card-title{
+  text-align: center;
+}
+
+.title{
+  text-align: center;
 }
