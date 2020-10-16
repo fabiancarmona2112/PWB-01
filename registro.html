@@ -10,7 +10,7 @@
 
   <body>
     <nav class="barr-menu">
-      <a href="">
+      <a href="Inicio.html">
       <div class="nav-logo">
         <h1>The NavBar</h1>
       </div>
@@ -28,32 +28,36 @@
     </nav>
 
     <div class="login-box">
-      <img class="avatar" src="userIcon/persona.png" alt="Persona" />
+      <img class="avatar" src="userIcon/letra-r.png" alt="avatar" />
       <h1>Registrarse</h1>
-      <form id="register-box">
+      <form id="register-box" name="register-box" action="" method="GET">
         <label for="Name">Ingrese su Nombre</label>
-        <input type="text" name="Name" placeholder="Nombre" /><br />
+        <input type="text" name="Name" id="Name" placeholder="Nombre" required /><br />
         <label for="Last-Name">Ingrese sus Apellidos</label>
         <input
           type="text"
           name="Last-Name"
+          id="last-name"
           placeholder="Apellidos"
           required
         /><br />
         <label for="Email">Ingrese su coreo</label>
-        <input type="email" name="Email" placeholder="correo" /><br />
+        <input type="email" id="Email" name="Email" placeholder="correo" required /><br />
+        <label for="UserName">Nombre de usuario</label>
+        <input type="text" name="userName" id="user-name" placeholder="Nombre de usuario" minlength="3" required>
         <label for="Password">Ingrese su Contraseña</label>
-        <input type="password" name="Password" placeholder="Contraseña" /><br />
-        <input type="submit" value="Guardar" />
+        <input type="password" name="Password" placeholder="Contraseña" required/><br />
+        <input type="submit" value="Guardar" id="submitInfo" />
       </form>
       <a href="#">Iniciar sesion</a>
       <a href="#">Olvidaste la contraseña?</a>
     </div>
 
     <script src="js/script.js"></script>
+    <script src="js/register.js"></script>
   </body>
 
-  <nav aria-label="Page navigation example">
+  <!-- <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
       <li class="page-item disabled">
         <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
@@ -65,5 +69,6 @@
         <a class="page-link" href="#">Next</a>
       </li>
     </ul>
-  </nav>
+  </nav> -->
+  <!-- Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a> -->
 </html>
