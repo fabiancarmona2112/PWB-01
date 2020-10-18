@@ -9,6 +9,13 @@ body {
   height: 100vh;
 }
 
+.image-picker{
+  background-color: white;
+  margin: 5px;
+  width: 160px;
+  height: 125px;
+}
+
 .login-box {
   width: 320px;
   height: 500px;
