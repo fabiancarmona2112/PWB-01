@@ -1,11 +1,13 @@
 
+
 const getSubmit = document.getElementsByName("register-box");
 const submitBtn = document.getElementById('submitInfo');
+const loginBox = document.eg
 const iconImages = [
     
-    'UserIcon/3529958-halloween-costume-avatars/png/001-scientist.png',
-    'UserIcon/3529958-halloween-costume-avatars/png/002-werewolf.png',
-    'UserIcon/3529958-halloween-costume-avatars/png/003-pumpkin.png'
+    'UserIcon/Icons/png/001-scientist.png',
+    'UserIcon/Icons/png/002-werewolf.png',
+    'UserIcon/Icons/png/003-pumpkin.png' 
 
     ];
 
@@ -66,7 +68,8 @@ submitBtn.addEventListener('click',function submit(event){
     const name = document.getElementById("Name");
     const lastName = document.getElementById("last-name");
     const userName = document.getElementById("user-name");
-	const password = document.getElementById("password");
+    const password = document.getElementById("password");
+    let avatarImage = null;
     mailVal(email);
     completeNameVal(name, lastName);
     userNameVal(userName);
@@ -75,16 +78,30 @@ submitBtn.addEventListener('click',function submit(event){
         document.getElementById("login-box").innerHTML = `
             <h1 style="color: white;">Imagen de perfil</h1>
             <div class="image-picker" id="image-picker">
-                <img id="image-1" style="height: 125px; width: 160px; src="${iconImages[0]}">                
+                <img id="image-1" src="${iconImages[0]}">      
+                <button id="scientist" value="Choose" class="btn btn-danger">Choose</button>
             </div>
             <div class="image-picker" id="image-picker">
-                <img id="image-2" style="height: 125px; width: 160px; src="${iconImages[1]}">                
+                <img id="image-2" src="${iconImages[1]}">                
+                <button id="werewolf" value="Choose" class="btn btn-danger">Choose</button>
             </div>
             <div class="image-picker" id="image-picker">
-                <img id="image-3" style="height: 125px; width: 160px; src="${iconImages[2]}">                
-            </div>`;
+                <img id="image-3" src="${iconImages[2]}">                
+                <button id="pumpik" value="Choose" class="btn btn-danger">Choose</button>
+            </div>
+            `;
 
-
-    }
-
+        document.getElementById("scientist").addEventListener('click', function imagePick(){
+            avatar = iconImages[0];
+            alert('Uested escogio: ' + avatar);
+        });
+        document.getElementById("werewolf").addEventListener('click', function imagePick(){
+            avatar = iconImages[1];
+            alert('Uested escogio: ' + avatar);
+        });
+        document.getElementById("pumpik").addEventListener('click', function imagePick(){
+            avatar = iconImages[2];
+            alert('Uested escogio: ' + avatar);
+        });
+    };
 });

@@ -10,10 +10,16 @@ body {
 }
 
 .image-picker{
-  background-color: white;
+  display: flex;
   margin: 5px;
-  width: 160px;
+  width: 320px;
   height: 125px;
+}
+
+.image-picker img{
+  width: 160px;
+  height: 100%;
+  border-radius: 100px;
 }
 
 .login-box {
