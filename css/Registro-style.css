@@ -9,22 +9,64 @@ body {
   height: 100vh;
 }
 
+.login{
+  background-color: black;
+  width: 320px;
+  height: 380px;
+  transform: translate(100%, 45%);
+  color: white;
+  padding: 30px;
+}
+
+.btn.btn-danger{
+  margin-top: 20px;
+}
+
+.login h3{
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  padding-top: 24px ;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.images{
+  display: none;
+  position: absolute;
+  left: 20%;
+  top: 25%;
+  background-color: black;
+  color: white;
+  width:320px;
+  height: 620px;
+  padding: 30px;
+}
+
+.images h2{
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+
 .image-picker{
   display: flex;
   margin: 5px;
-  width: 320px;
+  width: 280px;
   height: 125px;
 }
 
 .image-picker img{
   width: 160px;
   height: 100%;
+  margin: 10px;
   border-radius: 100px;
+  color: white;
 }
 
 .login-box {
   width: 320px;
-  height: 500px;
+  height: 650px;
   background: black;
   color: white;
   top: 25%;
@@ -91,7 +133,7 @@ body {
   background: white;
   border-radius: 70px;
   top: -60px;
-  left: 115px;
+  left: 35%;
   position: absolute;
 }
 
@@ -102,20 +144,20 @@ body {
   font-size: 24px;
 }
 
-.login-box label {
+label {
   margin-bottom: 5px;
   padding: 0px;
   font-weight: bold;
   display: block;
 }
 
-.login-box input {
+input {
   width: 100%;
   margin-bottom: 20px;
   color: rgb(138, 138, 131);
 }
 
-.login-box input[type="text"] {
+input[type="text"] {
   border-top: none;
   border-right: none;
   border-left: none;
@@ -131,7 +173,7 @@ body {
   outline: none;
 }
 
-.login-box input[type="password"] {
+input[type="password"] {
   border-top: none;
   border-right: none;
   border-left: none;
