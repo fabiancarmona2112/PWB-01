@@ -1,8 +1,10 @@
 .user-image{
+    position: relative;
+    left: 5%;
     margin-top: 50px;
     border-radius: 30px;
     display: flex;
-    width: 530px;
+    width: 85%;
     background-color: black;
 }
 
@@ -72,7 +74,6 @@ a:hover{
 }
 
 .biography{
-    position: relative;
     left: 35%;
     top: -45%;
     width: 50%;
