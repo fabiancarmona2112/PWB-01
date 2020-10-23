@@ -24,7 +24,7 @@ class article {
   }
 
   createArticle(){
-      
+
   }
 
 }
@@ -34,6 +34,7 @@ const $shortDesc = document.getElementById("article-header");
 const $body = document.getElementById("article");
 const $files = document.getElementById("image-file");
 const sendEditor = document.getElementById("send-editor");
+const delteImg = document.getElementById("delete-img-one");
 const $storedImages = [
   document.getElementById("img-one"),
   document.getElementById("img-two"),
@@ -56,10 +57,19 @@ $files.addEventListener("change", () => {
     const files = $files.files[0];
     $images[$imageCounter] = URL.createObjectURL(files);
     $storedImages[$imageCounter].src = $images[$imageCounter];
+    delteImg.style.display = "inline";
     $imageCounter++;
   } else {
     alert("Images limit reached");
   }
+});
+
+delteImg.addEventListener("click",(event)=>{
+
+    event.preventDefault();
+    $storedImages[0].src = 0;
+    delteImg.style.display= "none";
+
 });
 
 /*
