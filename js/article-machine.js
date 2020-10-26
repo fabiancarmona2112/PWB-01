@@ -13,21 +13,48 @@ class article {
     this.body = _article[2];
     this.images = _article[3];
     this.categorySelected = _article[4];
+    this.status = false;
   }
-
+  /* 
   setId() {
     if (this.id == 0) {
       this.id = 1;
     } else {
       this.id++;
     }
-  }
+  } */
 
-  createArticle() {}
+  sendArticle() {
+    this.article = document.getElementById("articles-sended");
+    this.article.innerHTML = `<div class="acordion" id = "content">
+    <div class="card">
+      <div class="card-header" id="content-header">
+        <h2 class="mb-0">
+          <button
+           class="btn btn-danger btn-block text-left"
+           type="button"
+           data-toggle="collapse"
+           data-target="#collapseContent"
+           aria-expanded="true"
+           aria-controls="collapseContent"
+          >
+          ${this.header}
+          </button>
+        </h2>
+      </div>
+      <div id="collapseContent" class="collapse show" aria-labelledby="content-header" data-parent="#content">
+       <div class="card-body" style="color:black;">
+         <a href="#">${this.shortDesc}</a>
+       </div>
+      </div>
+    </div>
+  </div>`;
+    console.log(this.body);
+  }
 }
 
 const $header = document.getElementById("article-header");
-const $shortDesc = document.getElementById("article-header");
+const $shortDesc = document.getElementById("short-description");
 const $body = document.getElementById("article");
 const $files = document.getElementById("image-file");
 const sendEditor = document.getElementById("send-editor");
@@ -49,6 +76,20 @@ let flag = true;
 
 console.log($storedImages);
 
+function cleanForm() {
+  $header.value = "";
+  $shortDesc.value="";
+  $body.value = "";
+  $images = [0,0,0];
+  $storedImages[0].src = 0;
+  $storedImages[1].src = 0;
+  $storedImages[2].src = 0;
+  deleteImg[0].style.display = "none";
+  deleteImg[1].style.display = "none";
+  deleteImg[2].style.display = "none";
+  $imageCounter = 0;
+}
+
 sendEditor.addEventListener("click", (event) => {
   event.preventDefault();
   let select = articleCategory.options[articleCategory.selectedIndex].value;
@@ -61,9 +102,11 @@ sendEditor.addEventListener("click", (event) => {
   ];
   if ($imageCounter == 3) {
     newArticle = new article(metaArticle);
+    newArticle.sendArticle();
     console.log(newArticle);
-  }else{
-    alert('Rquiered 3 images');
+    cleanForm();
+  } else {
+    alert("Rquiered 3 images");
   }
 });
 
@@ -75,7 +118,7 @@ $files.addEventListener("change", () => {
     deleteImg[$imageCounter].style.display = "inline";
     $imageCounter++;
     flag = true;
-  }else {
+  } else {
     alert("Images limit reached or ");
   }
 });
@@ -86,9 +129,9 @@ function deleteStoredImages(toDelete) {
     return;
   }
 
-  if(flag == false){
-    alert('add an image before delete another image')
-  }else {
+  if (flag == false) {
+    alert("add an image before delete another image");
+  } else {
     $storedImages[toDelete].src = 0;
     deleteImg[toDelete].style.display = "none";
     $imageCounter = toDelete;
