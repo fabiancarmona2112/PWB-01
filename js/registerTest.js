@@ -147,18 +147,21 @@ submitBtn.addEventListener("click", function submit(event) {
 
   document
       .getElementById("scientist")
-      .addEventListener("click", function chooseImage(){
+      .addEventListener("click", function chooseImage(event){
+        event.preventDefault();
         newUser.setAvatar(iconImages[0]);
       });
     document
       .getElementById("werewolf")
-      .addEventListener("click", function chooseImage(){
-        newUser.setAvatar(iconImages[1])
+      .addEventListener("click", function chooseImage(event){
+        newUser.setAvatar(iconImages[1]);
+        event.preventDefault();
       });
     document
       .getElementById("pumpik")
-      .addEventListener("click", function chooseImage(){
+      .addEventListener("click", function chooseImage(event){
         newUser.setAvatar(iconImages[2]);
+        event.preventDefault();
       });
 
 });

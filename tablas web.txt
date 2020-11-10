@@ -1,0 +1,7 @@
+Usuarios (correo, nombreUsuario PK, constraseña, redes sociales, imagen, status, perfil_id FK(perfil), noticias FK noticia (noticia))
+noticia (titulo, descripcion corta, noticia, categoria, imagenes, video, ID_noticia, editor (usuario), ID_comentario FK (comentario), calificacion)
+perfil (Descripcion, noticias marcadas, ID_perfil)
+comentario (Contenido, nombre, valor, nombre, noticia, status, nombre_moderador (usuario))
+usuario amonesta usuario (ID_usuario FK (usuario), causa, ID_amonestacion)
+
+

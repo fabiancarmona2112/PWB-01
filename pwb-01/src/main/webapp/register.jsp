@@ -4,14 +4,8 @@
     Author     : mike_
 --%>
 
-<%@page import="java.util.List"%>
-<%@page import="model.NewUser"%>
-<%
-    //Formularios del registro
-    
-%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,6 +28,16 @@
         <li><a href="Inicio.html">Home</a></li>
         <li><a href="#">News</a></li>
         <li><a href="#">Contact</a></li>
+        <li><a href="#">${useName}</a></li>
+        <li>
+          <a href="user-profile.html"
+            ><img
+              src="UserIcon/usuario.png"
+              alt="User icon"
+              id="user-icon"
+              style="width: 80px; height: 80px; border-radius: 15px"
+          /></a>
+        </li>
       </ul>
       <div class="burger corss">
         <div class="line-1"></div>
@@ -45,7 +49,7 @@
     <div class="login-box" id="login-box">
       <img class="avatar" src="UserIcon/letra-r.png" alt="avatar" id="avatar" />
       <h1>Registrarse</h1>
-      <form id="register-box" name="register-box" action="login.jsp" method="GET">
+      <form id="register-box" name="register-box" action="User" method="POST">
         <label for="Name">Ingrese su Nombre</label>
         <input
           type="text"
@@ -87,39 +91,39 @@
           placeholder="Contraseña"
           required
         /><br />
-        <input type="submit" value="Guardar" id="submitInfo" />
+        <input type="submit" value="Save" name="save" id="submitInfo" />
       </form>
-      <a href="#">Iniciar sesion</a>
+      <a href="#" class="justify-content-center">Iniciar sesion</a>
       <!--<a href="#">Olvidaste la contraseña?</a>-->
     </div>
 
     <div class="images" id="images">
       <h2 style="color: white">Imagen de perfil</h2>
-      <div class="image-picker" id="image-picker">
-        <img id="image-1" src="UserIcon/Icons/png/001-scientist.png" />
-        <button id="scientist" value="Choose" class="btn btn-danger">
-          Choose
-        </button>
-      </div>
-      <div class="image-picker" id="image-picker">
-        <img id="image-2" src="UserIcon/Icons/png/002-werewolf.png" />
-        <button id="werewolf" value="Choose" class="btn btn-danger">
-          Choose
-        </button>
-      </div>
-      <div class="image-picker" id="image-picker">
-        <img id="image-3" src="UserIcon/Icons/png/003-pumpkin.png" />
-        <button id="pumpik" value="Choose" class="btn btn-danger">
-          Choose
-        </button>
-      </div>
-      <label for="social-media">Red social precerida</label>
-      <input
-        type="text"
-        name="social-media"
-        id="social-media"
-        placeholder="Red social preferida"
-      /><br />
+        <div class="image-picker" id="image-picker">
+          <img id="image-1" src="UserIcon/Icons/png/001-scientist.png" />
+          <button id="scientist" value="Choose" class="btn btn-danger">
+            Choose
+          </button>
+        </div>
+        <div class="image-picker" id="image-picker">
+          <img id="image-2" src="UserIcon/Icons/png/002-werewolf.png" />
+          <button id="werewolf" value="Choose" class="btn btn-danger">
+            Choose
+          </button>
+        </div>
+        <div class="image-picker" id="image-picker">
+          <img id="image-3" src="UserIcon/Icons/png/003-pumpkin.png" />
+          <button id="pumpik" value="Choose" class="btn btn-danger">
+            Choose
+          </button>
+        </div>
+        <label for="social-media">Red social precerida</label>
+        <input
+          type="text"
+          name="social-media"
+          id="social-media"
+          placeholder="Red social preferida"
+        /><br />
       <a href="Inicio.html" class="btn btn-danger">Done!</a>
      <!--  <input type="submit" value="Done!" id="finish" class="btn btn-danger" /> -->
     </div>
@@ -128,17 +132,19 @@
       <h3>
         Login site
       </h3>
-      <label for="login-user">Nombre de usuario</label>
-      <input type="text" name="login-user" id="login-user" placeholder="Usuario">
-      <label for="login-password">Contraseña</label>
-      <input type="password" name="login-password" id="login-password" placeholder="Constraseña"><br>
-      <input type="submit" id="login-button" class="btn btn-danger" value="Login">
+      <form method="POST" action="User">
+        <label for="login-user">Nombre de usuario</label>
+        <input type="text" name="login-user" id="login-user" placeholder="Usuario">
+        <label for="login-password">Contraseña</label>
+        <input type="password" name="login-password" id="login-password" placeholder="Constraseña"><br>
+        <!--<a href="User" class="btn btn-danger" id="login-button">Login</a>-->
+        <input type="submit" id="login-button" class="btn btn-danger" name="sign-in" value="Login">
+      </form>
     </div>
 
     <!--<script src="js/script.js"></script>
     <!-- <script src="js/register.js"></script>
-    <script src="js/registerTest.js"></script>
-    -->
+    <script src="js/registerTest.js"></script>-->
   </body>
 
   <!-- <nav aria-label="Page navigation example">
