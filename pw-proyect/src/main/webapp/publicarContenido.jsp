@@ -91,7 +91,7 @@
 
         <div class="cotainer">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-5">
                     <div
                         class="accordion"
                         style="width: 60%; transform: translate(25%); margin-top: 5%"
