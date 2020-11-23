@@ -82,12 +82,12 @@ mike_ --%>
           <input
             class="form-control mr-sm-2"
             type="password"
-            placeholder="Contraseï¿½a"
+            placeholder="Contraseña"
             id="INcontrasenia"
             name="INcontrasenia"
           />
           <button class="btn btn-danger my-2 my-sm-0" type="submit">
-            Iniciar sesï¿½on
+            Iniciar sesión
           </button>
         </form>
         <!-- <form class="form-inline my-2 my-lg-0" method="POST" action="">
