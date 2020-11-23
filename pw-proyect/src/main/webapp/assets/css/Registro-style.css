@@ -65,11 +65,11 @@ body {
 }
 
 .login-box {
-  width: 320px;
+  width: 720px;
   height: 650px;
-  background: black;
+  background:black;
   color: white;
-  top: 25%;
+  top: 10%;
   left: 40%;
   position: absolute;
   padding-top: 80px;

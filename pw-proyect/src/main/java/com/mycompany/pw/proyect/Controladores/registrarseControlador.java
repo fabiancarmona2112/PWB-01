@@ -11,6 +11,9 @@ import com.mycompany.pw.proyect.Utils.fileUtils;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -24,10 +27,9 @@ import javax.servlet.http.Part;
  * @author mike_
  */
 @WebServlet(name = "registrarseControlador", urlPatterns = {"/registrarseControlador"})
-@MultipartConfig(maxFileSize = 1000 * 1000 * 5, maxRequestSize = 1000 * 1000 * 25, fileSizeThreshold = 1000 * 1000)
+@MultipartConfig(maxFileSize = 10000 * 1000 * 5, maxRequestSize = 1000 * 1000 * 25, fileSizeThreshold = 1000 * 1000)
 public class registrarseControlador extends HttpServlet {
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -39,7 +41,28 @@ public class registrarseControlador extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        //obtengo el nombre y la contraeña del form
+       String nombreUsuario = request.getParameter("INnombreUsuario");
+       String contrasenia = request.getParameter("INcontrasenia");
+       
+       //instancio mi modelo usuario para enviarselo al DAO
+       modeloUsuario usuario = new modeloUsuario();
+       //le doy los valoes de mis parametros
+       usuario.setNombreUsuario(nombreUsuario);
+       usuario.setContrasenia(contrasenia);
+
+        // Obtenemos los usuarios del DAO
+       modeloUsuario logeado = usuarioDao.getUser(usuario);
+       
+       if (logeado != null ){
+        // Lo agregamos como atributo al request
+        request.setAttribute("usuario", usuario);
+        // Enviamos el request a index.jsp con la informacion   
+        //request.getRequestDispatcher("publicarContenido.jsp").forward(request, response);
+        request.getRequestDispatcher("perfilUsuario.jsp").forward(request, response);
+       }else{
+        request.getRequestDispatcher("fail.jsp").forward(request, response);           
+       }
     }
 
     /**
@@ -53,11 +76,13 @@ public class registrarseControlador extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       String nombre = request.getParameter("Name");
-       String apellidos = request.getParameter("Last-Name");
-       String correo = request.getParameter("Email");
-       String contrasenia = request.getParameter("Password");
-       String nombreUsuario = request.getParameter("userName");
+       String nombre = request.getParameter("nombre");
+       String apellidos = request.getParameter("apellido");
+       String redSocial = request.getParameter("RedSocial");
+       String rolUsuario = request.getParameter("rolUsuario");
+       String email = request.getParameter("email");
+       String contrasenia = request.getParameter("password");
+       String nombreUsuario = request.getParameter("nombreUsuario");
        String path = request.getServletContext().getRealPath("");
        File fileSaveDir = new File(path + fileUtils.RUTE_USER_IMAGE);
        if(!fileSaveDir.exists()){
@@ -68,9 +93,12 @@ public class registrarseControlador extends HttpServlet {
        String nameImage = file.getName() + System.currentTimeMillis() + fileUtils.GetExtension(contentType);
        String fullPath = path + fileUtils.RUTE_USER_IMAGE + "/" + nameImage;
        file.write(fullPath);
-       modeloUsuario usuario = new modeloUsuario(nombre, apellidos, correo, contrasenia, nombreUsuario, fileUtils.RUTE_USER_IMAGE + "/" + nameImage);
+       modeloUsuario usuario = new modeloUsuario(nombre, apellidos, email, contrasenia, nombreUsuario, fileUtils.RUTE_USER_IMAGE + "/" + nameImage, rolUsuario, redSocial);
        if(usuarioDao.insertarUsuario(usuario)==1){
-           response.sendRedirect("index.jsp");
+             request.setAttribute("usuario", usuario);
+        // Enviamos el request a index.jsp con la informacion        
+        request.getRequestDispatcher("perfilUsuario.jsp").forward(request, response);
+           
        }else{
            request.getRequestDispatcher("fail.jsp").forward(request, response);           
        }

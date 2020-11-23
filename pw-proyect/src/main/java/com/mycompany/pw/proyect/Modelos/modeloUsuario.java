@@ -16,9 +16,40 @@ public class modeloUsuario {
     private String contrasenia;
     private String nombreUsuario;
     private String urlImage;
+    private String rol;
+    private int idTipoUsuario;
+    private String rSocial;
+    private String biografia;
+    private int idUsuario;
 
     public modeloUsuario() {
     }
+
+
+    public modeloUsuario(String nombre, String apellido, String correo, String contrasenia, String nombreUsuario, String urlImage, String rol, String rSocial, String biografia) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.contrasenia = contrasenia;
+        this.nombreUsuario = nombreUsuario;
+        this.urlImage = urlImage;
+        this.rol = rol;
+        this.rSocial = rSocial;
+        this.biografia = biografia;
+    }
+
+    public modeloUsuario(String nombre, String apellido, String correo, String contrasenia, String nombreUsuario, String urlImage, String rol, String rSocial) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.contrasenia = contrasenia;
+        this.nombreUsuario = nombreUsuario;
+        this.urlImage = urlImage;
+        this.rol = rol;
+        this.rSocial = rSocial;        
+    }
+    
+    
 
     public modeloUsuario(String nombre, String apellido, String correo, String contrasenia, String nombreUsuario) {
         this.nombre = nombre;
@@ -35,6 +66,22 @@ public class modeloUsuario {
         this.contrasenia = contrasenia;
         this.nombreUsuario = nombreUsuario;
         this.urlImage = urlImage;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public String getrSocial() {
+        return rSocial;
+    }
+
+    public void setrSocial(String rSocial) {
+        this.rSocial = rSocial;
     }
 
     public String getUrlImage() {
@@ -84,6 +131,30 @@ public class modeloUsuario {
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
+    public String getBiografia() {
+        return biografia;
+    }
+
+    public void setBiografia(String biografia) {
+        this.biografia = biografia;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public int getIdTipoUsuario() {
+        return idTipoUsuario;
+    }
+
+    public void setIdTipoUsuario(int idTipoUsuario) {
+        this.idTipoUsuario = idTipoUsuario;
+    }
+    
     
     
 }

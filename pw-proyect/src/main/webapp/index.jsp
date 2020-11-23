@@ -81,8 +81,8 @@
           required
         /><br />
         <label for="imagen">Eliga una foto de perfil</label>
-        <input type="file" name="imagen" id="imagen">
-        <input type="submit" value="Guardar" id="submitInfo" />
+        <input class="btn btn-danger btn-block" type="file" name="imagen" id="imagen">
+        <input class="btn btn-danger" type="submit" value="Guardar" id="submitInfo" />
       </form>
       <a href="#">Iniciar sesion</a>
       <a href="#">Olvidaste la contraseña?</a>
