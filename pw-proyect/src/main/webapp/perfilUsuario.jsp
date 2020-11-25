@@ -235,30 +235,29 @@
                 </div>
                 <div class="col-lg-7">
                     <h1>Biografia</h1>
-                    <form action="" method="POST">
+                    <form action="./editBiografia" method="POST">
                         <div class="bg-danger" style="height: 5px; width: 100%"></div>
                         <p id="biografia"><%=usuario.getBiografia()%></p>
                         <div class="bg-danger" style="height: 5px; width: 100%"></div>
+                        <input type="hiden" style="display: none;" readonly name="usuarioBiografia" value="<%= usuario.getNombreUsuario() %>">
                         <a id="editarBio" href="#" class="btn btn-danger mt-lg-3"
                            >Editar Biografia</a
                         >
                         <div style="display: none" class="form-group" id="textBiografia">
-                            <label for="exampleFormControlTextarea1">Example textarea</label>
+                            <label for="editBiografia">Example textarea</label>
                             <textarea
                                 class="form-control"
                                 id="editBiografia"
-
                                 name="editBiografia"
-
                                 rows="3"
                                 ></textarea>
-                            <input type= "hiden" name="usuario" value="<%=usuario.getBiografia()%>">
                         </div>
                         <button
                             type="submit"
                             class="btn btn-danger"
                             style="display: none"
                             id="guardarBio"
+                            name="guardarBio"
                             >
                             Guardar
                         </button>

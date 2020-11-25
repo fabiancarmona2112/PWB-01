@@ -75,11 +75,13 @@ public class editBiografia extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String editBiografia = request.getParameter("editBiografia");
-        String editUsuario = request.getParameter("usuario");
+        String editUsuario = request.getParameter("usuarioBiografia");
 
         modeloUsuario usuario = new modeloUsuario();
         usuario.setNombreUsuario(editUsuario);
-        if (usuarioDao.insertarUsuario(usuario) == 1) {
+        usuario.setBiografia(editBiografia);        
+        
+        if (usuarioDao.editarBiografia(usuario) == 1 && usuarioDao.buscarUsuario(usuario) != null) {
             request.setAttribute("usuario", usuario);
             // Enviamos el request a index.jsp con la informacion        
             request.getRequestDispatcher("perfilUsuario.jsp").forward(request, response);

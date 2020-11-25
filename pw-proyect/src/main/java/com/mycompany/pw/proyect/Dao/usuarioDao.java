@@ -123,9 +123,9 @@ public class usuarioDao {
                 usuario.setIdUsuario(idUsuario);
             }
 
-           statement.executeUpdate();
-           con.close();
-           return usuario;
+            statement.executeUpdate();
+            con.close();
+            return usuario;
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             return null;
@@ -145,7 +145,7 @@ public class usuarioDao {
             statement.setString(4, editusuario.getrSocial());
             ResultSet resultSet = statement.executeQuery();
             // Si el resultSet tiene resultados lo recorremos
-                                
+
             int filas = statement.executeUpdate();
             con.close();
             return filas;
@@ -158,25 +158,25 @@ public class usuarioDao {
 
     }
 
-//    public static int editarusuario(modeloUsuario editBiografia) {
-//
-//        try {
-//            Connection con = conexionDB.getConnection();
-//            CallableStatement statement = con.prepareCall("sp_editar_biografia(?,?)");
-//            statement.setString(1, editusuario.getNombreUsuario());
-//            statement.setString(2, editusuario.getBiografia());
-//
-//            ResultSet resultSet = statement.executeQuery();
-//            // Si el resultSet tiene resultados lo recorremos
-//
-//            return usuario;
-//        } catch (SQLException ex) {
-//            System.out.println(ex.getMessage());
-//            return 0;
-//        } finally {
-//            // return usuario;
-//        }
-//
-//    }
+    public static int editarBiografia(modeloUsuario usuario) {
+
+        try {
+            Connection con = conexionDB.getConnection();
+            CallableStatement statement = con.prepareCall("call sp_editar_biografia(?,?)");
+            statement.setString(1, usuario.getNombreUsuario());
+            statement.setString(2, usuario.getBiografia());
+
+            int filas = statement.executeUpdate();
+            // Si el resultSet tiene resultados lo recorremos
+            con.close();
+            return filas;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            return 0;
+        } finally {
+            // return usuario;
+        }
+
+    }
 
 }
