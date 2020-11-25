@@ -32,6 +32,10 @@
                     
                     var apellido = $("#apellido").text();
                     $("#editApellido").val(apellido);
+                    
+                    var Linkcontacto = $("#linkContacto").val();
+                     $("#editContacto").val(LinkContacto);
+                                        
                     //getParametrs();
                 });
 
@@ -196,6 +200,7 @@
                                 <p style="font-size: 30px" id="correo">
                                     <%=usuario.getCorreo()%>
                                 </p>
+                                <input type="hidden" style="display: none;" readonly name="linkContacto" id="linkContacto" value="<%=usuario.getrSocial()%>">
                                 <a style="font-size: 30px" id="contacto" href="<%=usuario.getrSocial()%>" class="nav-link">
                                    Contacto
                                 </a>
