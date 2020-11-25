@@ -10,6 +10,7 @@ package com.mycompany.pw.proyect.Modelos;
  * @author mike_
  */
 public class modeloUsuario {
+
     private String nombre;
     private String apellido;
     private String correo;
@@ -24,7 +25,6 @@ public class modeloUsuario {
 
     public modeloUsuario() {
     }
-
 
     public modeloUsuario(String nombre, String apellido, String correo, String contrasenia, String nombreUsuario, String urlImage, String rol, String rSocial, String biografia) {
         this.nombre = nombre;
@@ -46,17 +46,15 @@ public class modeloUsuario {
         this.nombreUsuario = nombreUsuario;
         this.urlImage = urlImage;
         this.rol = rol;
-        this.rSocial = rSocial;        
+        this.rSocial = rSocial;
     }
-    
-    
 
     public modeloUsuario(String nombre, String apellido, String correo, String contrasenia, String nombreUsuario) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.contrasenia = contrasenia;
-        this.nombreUsuario = nombreUsuario;        
+        this.nombreUsuario = nombreUsuario;
     }
 
     public modeloUsuario(String nombre, String apellido, String correo, String contrasenia, String nombreUsuario, String urlImage) {
@@ -68,21 +66,19 @@ public class modeloUsuario {
         this.urlImage = urlImage;
     }
 
-    public modeloBiografia(String editBiografia, String nombreUsuario){
-        this.editBiografia = editBiografia;
-         this.nombreUsuario = nombreUsuario;
+    public modeloUsuario(String editBiografia, String nombreUsuario) {
+        this.biografia = editBiografia;
+        this.nombreUsuario = nombreUsuario;
 
-}
+    }
 
-public modeloeditUsuario(String nombre, String apellido, String nombreUsuario, String redsocial){
+    public modeloUsuario(String nombre, String apellido, String nombreUsuario, String redsocial) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.nombreUsuario = nombreUsuario;
-        this.redsocial = redsocial;
+        this.rSocial = redsocial;
 
-
-}
-
+    }
 
     public String getRol() {
         return rol;
@@ -106,7 +102,7 @@ public modeloeditUsuario(String nombre, String apellido, String nombreUsuario, S
 
     public void setUrlImage(String urlImage) {
         this.urlImage = urlImage;
-    }        
+    }
 
     public String getNombre() {
         return nombre;
@@ -147,6 +143,7 @@ public modeloeditUsuario(String nombre, String apellido, String nombreUsuario, S
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
+
     public String getBiografia() {
         return biografia;
     }
@@ -170,7 +167,5 @@ public modeloeditUsuario(String nombre, String apellido, String nombreUsuario, S
     public void setIdTipoUsuario(int idTipoUsuario) {
         this.idTipoUsuario = idTipoUsuario;
     }
-    
-    
-    
+
 }

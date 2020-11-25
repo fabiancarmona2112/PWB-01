@@ -21,37 +21,36 @@ import java.util.Set;
  * @author mike_
  */
 public class usuarioDao {
-    
-    public static int insertarUsuario(modeloUsuario usuario){
-        try{
+
+    public static int insertarUsuario(modeloUsuario usuario) {
+        try {
             Connection conn = conexionDB.getConnection();
             CallableStatement statement = conn.prepareCall("call sp_registrarUsuario(?,?,?,?,?,?,?,?)");
-            statement.setString(1,usuario.getCorreo());
-            statement.setString(2,usuario.getContrasenia());
-            statement.setString(3,usuario.getNombreUsuario());
-            statement.setString(4,usuario.getNombre());
-            statement.setString(5,usuario.getApellido());
-            statement.setString(6,usuario.getUrlImage());
-            statement.setString(7,usuario.getrSocial());
-            statement.setString(8,usuario.getRol());
-            
+            statement.setString(1, usuario.getCorreo());
+            statement.setString(2, usuario.getContrasenia());
+            statement.setString(3, usuario.getNombreUsuario());
+            statement.setString(4, usuario.getNombre());
+            statement.setString(5, usuario.getApellido());
+            statement.setString(6, usuario.getUrlImage());
+            statement.setString(7, usuario.getrSocial());
+            statement.setString(8, usuario.getRol());
+
             return statement.executeUpdate();
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }
-        finally{
-            
+        } finally {
+
         }
         return 0;
     }
-    
+
     public static modeloUsuario getUser(modeloUsuario usuario) {
-       //modeloUsuario usuario = new modeloUsuario();
+        //modeloUsuario usuario = new modeloUsuario();
         try {
             Connection con = conexionDB.getConnection();
             CallableStatement statement = con.prepareCall("call sp_iniciarSesion(?,?)");
-            statement.setString(1,usuario.getNombreUsuario());
-             statement.setString(2,usuario.getContrasenia());
+            statement.setString(1, usuario.getNombreUsuario());
+            statement.setString(2, usuario.getContrasenia());
             ResultSet resultSet = statement.executeQuery();
             // Si el resultSet tiene resultados lo recorremos
             while (resultSet.next()) {
@@ -78,23 +77,23 @@ public class usuarioDao {
                 usuario.setBiografia(biografia);
                 usuario.setRol(rolUsuario);
                 usuario.setIdTipoUsuario(idRolUsuario);
-                usuario.setIdUsuario(idUsuario);                     
+                usuario.setIdUsuario(idUsuario);
             }
-            
+
             return usuario;
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             return null;
         } finally {
-           // return usuario;
+            // return usuario;
         }
     }
-    
-    public static modeloUsuario buscarUsuario(modeloUsuario usuario){
+
+    public static modeloUsuario buscarUsuario(modeloUsuario usuario) {
         try {
             Connection con = conexionDB.getConnection();
             CallableStatement statement = con.prepareCall("call sp_buscar_usuario(?)");
-            statement.setString(1,usuario.getNombreUsuario());
+            statement.setString(1, usuario.getNombreUsuario());
             ResultSet resultSet = statement.executeQuery();
             // Si el resultSet tiene resultados lo recorremos
             while (resultSet.next()) {
@@ -121,66 +120,63 @@ public class usuarioDao {
                 usuario.setBiografia(biografia);
                 usuario.setRol(rolUsuario);
                 usuario.setIdTipoUsuario(idRolUsuario);
-                usuario.setIdUsuario(idUsuario);                     
+                usuario.setIdUsuario(idUsuario);
             }
-            
-            return statement.executeUpdate();
+
+           statement.executeUpdate();
+           con.close();
+           return usuario;
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             return null;
         } finally {
-           // return usuario;
+            // return usuario;
         }
     }
-public static int editarusuario(modeloUsuario editusuario)  {
 
- try {
+    public static int editarusuario(modeloUsuario editusuario) {
+
+        try {
             Connection con = conexionDB.getConnection();
-            CallableStatement statement = con.prepareCall("sp_editar_usuario(?,?,?,?)");
-            statement.setString(1,editusuario.getNombreUsuario());
-            statement.setString(2,editusuario.getNombre());
-            statement.setString(3,editusuario.getApellido());
-            statement.setString(4,editusuario.getSocialMedia());
+            CallableStatement statement = con.prepareCall("call sp_editar_usuario(?,?,?,?)");
+            statement.setString(1, editusuario.getNombreUsuario());
+            statement.setString(2, editusuario.getNombre());
+            statement.setString(3, editusuario.getApellido());
+            statement.setString(4, editusuario.getrSocial());
             ResultSet resultSet = statement.executeQuery();
             // Si el resultSet tiene resultados lo recorremos
-       
-            return statement.executeUpdate();
+                                
+            int filas = statement.executeUpdate();
+            con.close();
+            return filas;
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             return 0;
         } finally {
-           // return usuario;
+            // return usuario;
         }
 
+    }
 
-
-
-}  
-
-public static int editarusuario(modeloBiografia editBiografia)  {
-
- try {
-            Connection con = conexionDB.getConnection();
-            CallableStatement statement = con.prepareCall("sp_editar_biografia(?,?)");
-            statement.setString(1,editusuario.getNombreUsuario());
-            statement.setString(2,editusuario.getBiografia());
-       
-            ResultSet resultSet = statement.executeQuery();
-            // Si el resultSet tiene resultados lo recorremos
-       
-            return usuario;
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-            return 0;
-        } finally {
-           // return usuario;
-        }
-
-
-
-
-}  
+//    public static int editarusuario(modeloUsuario editBiografia) {
+//
+//        try {
+//            Connection con = conexionDB.getConnection();
+//            CallableStatement statement = con.prepareCall("sp_editar_biografia(?,?)");
+//            statement.setString(1, editusuario.getNombreUsuario());
+//            statement.setString(2, editusuario.getBiografia());
+//
+//            ResultSet resultSet = statement.executeQuery();
+//            // Si el resultSet tiene resultados lo recorremos
+//
+//            return usuario;
+//        } catch (SQLException ex) {
+//            System.out.println(ex.getMessage());
+//            return 0;
+//        } finally {
+//            // return usuario;
+//        }
+//
+//    }
 
 }
-
-
