@@ -124,7 +124,7 @@ public class usuarioDao {
                 usuario.setIdUsuario(idUsuario);                     
             }
             
-            return usuario;
+            return statement.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             return null;
@@ -132,5 +132,55 @@ public class usuarioDao {
            // return usuario;
         }
     }
-    
+public static int editarusuario(modeloUsuario editusuario)  {
+
+ try {
+            Connection con = conexionDB.getConnection();
+            CallableStatement statement = con.prepareCall("sp_editar_usuario(?,?,?,?)");
+            statement.setString(1,editusuario.getNombreUsuario());
+            statement.setString(2,editusuario.getNombre());
+            statement.setString(3,editusuario.getApellido());
+            statement.setString(4,editusuario.getSocialMedia());
+            ResultSet resultSet = statement.executeQuery();
+            // Si el resultSet tiene resultados lo recorremos
+       
+            return statement.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            return 0;
+        } finally {
+           // return usuario;
+        }
+
+
+
+
+}  
+
+public static int editarusuario(modeloBiografia editBiografia)  {
+
+ try {
+            Connection con = conexionDB.getConnection();
+            CallableStatement statement = con.prepareCall("sp_editar_biografia(?,?)");
+            statement.setString(1,editusuario.getNombreUsuario());
+            statement.setString(2,editusuario.getBiografia());
+       
+            ResultSet resultSet = statement.executeQuery();
+            // Si el resultSet tiene resultados lo recorremos
+       
+            return usuario;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            return 0;
+        } finally {
+           // return usuario;
+        }
+
+
+
+
+}  
+
 }
+
+

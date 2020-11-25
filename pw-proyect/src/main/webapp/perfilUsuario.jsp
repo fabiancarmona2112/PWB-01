@@ -156,20 +156,14 @@
           </div>
           <div class="row">
             <div class="col-lg-12">
-              <form action="" method="POST">
+              <form action="./EditarUsuarioControlador" method="POST">
                 <div class="bg-danger" style="height: 5px; width: 100%"></div>
+                <input type="text" readonly style="border:none; background: none;"
+                       value="<%=usuario.getNombreUsuario()%>"
+                       name="editusuario"
+                       >
                 <p style="font-size: 30px" id="nombreUsuario">
                   <%=usuario.getNombreUsuario()%>
-                </p>
-                <input
-                  style="display: none"
-                  type="text"
-                  name="editNombreUsuario"
-                  id="editNombreUsuario"
-                  placeholder="Nombre Usuario"
-                />
-                <p style="font-size: 30px" id="nombre">
-                  <%=usuario.getNombre() + " " +usuario.getApellido()%>
                 </p>
                 <input
                   style="display: none"
@@ -185,6 +179,7 @@
                   id="editApellido"
                   placeholder="Apellido"
                 />
+                
                 <p style="font-size: 30px" id="correo">
                   <%=usuario.getCorreo()%>
                 </p>
@@ -234,8 +229,12 @@
               <textarea
                 class="form-control"
                 id="editBiografia"
+                
+                name="editBiografia"
+                
                 rows="3"
               ></textarea>
+              <input type= "hiden" name="usuario" value="<%=usuario.getBiografia()%>">
             </div>
             <button
               type="submit"

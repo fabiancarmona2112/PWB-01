@@ -68,6 +68,22 @@ public class modeloUsuario {
         this.urlImage = urlImage;
     }
 
+    public modeloBiografia(String editBiografia, String nombreUsuario){
+        this.editBiografia = editBiografia;
+         this.nombreUsuario = nombreUsuario;
+
+}
+
+public modeloeditUsuario(String nombre, String apellido, String nombreUsuario, String redsocial){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.nombreUsuario = nombreUsuario;
+        this.redsocial = redsocial;
+
+
+}
+
+
     public String getRol() {
         return rol;
     }
